@@ -7,6 +7,7 @@ import com.newspulse.model.UserModel;
 import com.newspulse.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,7 @@ public class UserService {
         return new ResponseModel("User registered successfully", HttpStatus.CREATED, newsPulseUser);
     }
 
-    public NewsPulseUser findByEmail(String email) {
+    public UserDetails findByEmail(String email) {
         return _userRepository.findByUserEmail(email);
     }
 }

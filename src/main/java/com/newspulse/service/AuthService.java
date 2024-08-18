@@ -20,7 +20,7 @@ public class AuthService {
     private PasswordEncoder _passwordEncoder;
 
     public NewsPulseUser authenticate(UserModel input) throws Exception {
-        NewsPulseUser user = _userRepository.findByUserEmail(input.getUserEmail());
+        NewsPulseUser user = (NewsPulseUser) _userRepository.findByUserEmail(input.getUserEmail());
         if(user!=null){
             if (_passwordEncoder.matches(input.getPassword(), user.getPassword())){
                 return user;
