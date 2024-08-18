@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.newspulse.entity.NewsPulseUser;
 
 @Repository
-public interface UserRepository extends JpaRepository<NewsPulseUser, Integer> {
+public interface UserRepository extends JpaRepository<NewsPulseUser, Integer>{
+    NewsPulseUser findByUserEmail(String email);
 }

@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.newspulse.entity.News;
 
 @Repository
-public interface NewsRepository extends JpaRepository<News, Integer> {}
+public interface NewsRepository extends JpaRepository<News, Integer> {
+    News findByTitle(String title);
+}
